@@ -1,0 +1,37 @@
+{
+	"schemaVersion": 1,
+	"id": "wynncraft-dynamic-weather",
+	"version": "${version}",
+	"name": "Wynncraft Dynamic Weather",
+	"description": "This is a client-side mod designed for Wynncraft to dynamically change weather based on player location and time.",
+	"authors": [
+		"Elijah Jibben - quikjay"
+	],
+	"contact": {
+		"homepage": "https://fabricmc.net/",
+		"sources": "https://github.com/FabricMC/fabric-example-mod"
+	},
+	"license": "LGPL-3.0",
+	"icon": "assets/wynncraft-dynamic-weather/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"com.jibben.wynncraftdynamicweather.WynncraftDynamicWeather"
+		],
+		"fabric-datagen": [
+			"com.jibben.wynncraftdynamicweather.WynncraftDynamicWeatherDataGenerator"
+		]
+	},
+	"mixins": [
+		"wynncraft-dynamic-weather.mixins.json"
+	],
+	"depends": {
+		"fabricloader": ">=0.15.11",
+		"minecraft": "~1.21",
+		"java": ">=21",
+		"fabric-api": "*"
+	},
+	"suggests": {
+		"another-mod": "*"
+	}
+}
