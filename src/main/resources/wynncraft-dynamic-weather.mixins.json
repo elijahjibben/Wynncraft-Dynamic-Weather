@@ -1,11 +1,12 @@
 {
-	"required": true,
-	"package": "com.jibben.wynncraftdynamicweather.mixin",
-	"compatibilityLevel": "JAVA_21",
-	"mixins": [
-		"ExampleMixin"
-	],
-	"injectors": {
-		"defaultRequire": 1
+  "required": true,
+  "package": "com.jibben.wynncraftdynamicweather.mixin",
+  "compatibilityLevel": "JAVA_21",
+  "mixins": [
+    "ExampleMixin",
+    "TaigaSnowMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
 	}
 }
