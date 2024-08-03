@@ -3,7 +3,7 @@
 	"id": "wynncraft-dynamic-weather",
 	"version": "${version}",
 	"name": "Wynncraft Dynamic Weather",
-	"description": "This is a client-side mod designed for Wynncraft to dynamically change weather based on player location and time",
+	"description": "This is a client-side mod designed for Wynncraft to dynamically change weather based on player location and time.",
 	"authors": [
 		"Elijah Jibben - quikjay"
 	],
