@@ -1,22 +1,39 @@
 package com.jibben.wynncraftdynamicweather;
 
+import com.jibben.wynncraftdynamicweather.config.WeatherType;
 import net.fabricmc.api.ModInitializer;
-
+import net.fabricmc.fabric.api.client.event.lifecycle.v1.ClientTickEvents;
+import net.minecraft.client.MinecraftClient;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 public class WynncraftDynamicWeather implements ModInitializer {
-	// This logger is used to write text to the console and the log file.
-	// It is considered best practice to use your mod id as the logger's name.
-	// That way, it's clear which mod wrote info, warnings, and errors.
-    public static final Logger LOGGER = LoggerFactory.getLogger("wynncraft-dynamic-weather");
+	public static final String ModID = "wynncraft-dynamic-weather";
+    public static final Logger LOGGER = LoggerFactory.getLogger(ModID);
+
+	private static final double dailyTicks = 24000;
+	public static double dailyProbability = 0.25;
+	private static final double tickProbability = 1 - Math.pow(1 - dailyProbability, 1 / dailyTicks);
+
+	public static WeatherType weatherType = WeatherType.DISABLED;
 
 	@Override
 	public void onInitialize() {
-		// This code runs as soon as Minecraft is in a mod-load-ready state.
-		// However, some things (like resources) may still be uninitialized.
-		// Proceed with mild caution.
+		ClientTickEvents.END_CLIENT_TICK.register(client -> {
+			if (client.player != null && client.world != null) {
+				if (Math.random() < tickProbability) {
+					changeWeather(client);
+				}
+			}
+		});
+	}
 
-		LOGGER.info("Hello Fabric world!");
+	private void changeWeather(MinecraftClient client) {
+		if (Math.random() < 0.5) {
+			weatherType = WeatherType.RAIN;
+		}
+		else {
+			weatherType = WeatherType.THUNDER;
+		}
 	}
 }

@@ -11,6 +11,7 @@ import org.spongepowered.asm.mixin.injection.At;
 
 @Mixin(Biome.class)
 public class TaigaSnowMixin {
+
     @ModifyReturnValue(method = "getPrecipitation", at = @At("RETURN"))
     private Biome.Precipitation getPrecipitation(Biome.Precipitation original, BlockPos pos) {
         if (MinecraftClient.getInstance().world.getBiome(pos).isIn(BiomeTags.IS_TAIGA)) {

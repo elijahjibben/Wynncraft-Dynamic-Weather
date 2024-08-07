@@ -3,7 +3,7 @@
   "package": "com.jibben.wynncraftdynamicweather.mixin",
   "compatibilityLevel": "JAVA_21",
   "mixins": [
-    "ExampleMixin",
+    "ForceWeatherMixin",
     "TaigaSnowMixin"
   ],
   "injectors": {
