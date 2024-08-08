@@ -2,11 +2,8 @@ package com.jibben.wynncraftdynamicweather.command;
 
 import com.jibben.wynncraftdynamicweather.WynncraftDynamicWeather;
 import com.jibben.wynncraftdynamicweather.config.WeatherType;
-import com.mojang.brigadier.CommandDispatcher;
 import net.fabricmc.fabric.api.client.command.v2.ClientCommandManager;
 import net.fabricmc.fabric.api.client.command.v2.ClientCommandRegistrationCallback;
-import net.fabricmc.fabric.api.client.command.v2.FabricClientCommandSource;
-import net.minecraft.command.CommandRegistryAccess;
 import net.minecraft.text.Text;
 
 public class WynnWeatherCommand {
