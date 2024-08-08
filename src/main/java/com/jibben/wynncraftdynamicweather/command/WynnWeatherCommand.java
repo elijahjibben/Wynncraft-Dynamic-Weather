@@ -47,6 +47,13 @@ public class WynnWeatherCommand {
                     }))
             );
 
+            dispatcher.register(ClientCommandManager.literal("wynnweather").then(ClientCommandManager.literal("status")
+                    .executes(context -> {
+                        context.getSource().sendFeedback(Text.literal("Daily Probability: " + (WynncraftDynamicWeather.getDailyProbability() * 100) + "%" ));
+                        return 0;
+                    }))
+            );
+
         });
     }
 }
