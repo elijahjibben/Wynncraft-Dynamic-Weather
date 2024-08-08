@@ -22,7 +22,7 @@ public class WynncraftDynamicWeather implements ModInitializer {
 
 	@Override
 	public void onInitialize() {
-		ClientCommandRegistrationCallback.EVENT.register(WynnWeatherCommand::register);
+		WynnWeatherCommand.register();
 
 		ClientTickEvents.END_CLIENT_TICK.register(client -> {
 			if (client.player != null && client.world != null) {

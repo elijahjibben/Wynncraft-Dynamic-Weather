@@ -6,19 +6,19 @@ import com.mojang.brigadier.CommandDispatcher;
 import net.fabricmc.fabric.api.client.command.v2.ClientCommandManager;
 import net.fabricmc.fabric.api.client.command.v2.ClientCommandRegistrationCallback;
 import net.fabricmc.fabric.api.client.command.v2.FabricClientCommandSource;
-import net.minecraft.client.network.ClientCommandSource;
 import net.minecraft.command.CommandRegistryAccess;
 import net.minecraft.text.Text;
 
 public class WynnWeatherCommand {
-    public static void register(CommandDispatcher<FabricClientCommandSource> dispatcher, CommandRegistryAccess registryAccess) {
+    public static void register() {
+        ClientCommandRegistrationCallback.EVENT.register((dispatcher, registryAccess) -> {
+
             dispatcher.register(ClientCommandManager.literal("wynnweather").then(ClientCommandManager.literal("clear")
                     .executes(context -> {
 
                         if (WynncraftDynamicWeather.getWeatherType() == WeatherType.DISABLED) {
                             context.getSource().sendFeedback(Text.literal("Mod is disabled! Please enable in Mod Menu."));
-                        }
-                        else {
+                        } else {
                             WynncraftDynamicWeather.setWeatherType(WeatherType.CLEAR);
                             context.getSource().sendFeedback(Text.literal("Set weather to clear."));
                         }
@@ -30,8 +30,7 @@ public class WynnWeatherCommand {
                     .executes(context -> {
                         if (WynncraftDynamicWeather.getWeatherType() == WeatherType.DISABLED) {
                             context.getSource().sendFeedback(Text.literal("Mod is disabled! Please enable in Mod Menu."));
-                        }
-                        else {
+                        } else {
                             WynncraftDynamicWeather.setWeatherType(WeatherType.RAIN);
                             context.getSource().sendFeedback(Text.literal("Set weather to rain."));
                         }
@@ -43,14 +42,14 @@ public class WynnWeatherCommand {
                     .executes(context -> {
                         if (WynncraftDynamicWeather.getWeatherType() == WeatherType.DISABLED) {
                             context.getSource().sendFeedback(Text.literal("Mod is disabled! Please enable in Mod Menu."));
-                        }
-                        else {
+                        } else {
                             WynncraftDynamicWeather.setWeatherType(WeatherType.THUNDER);
                             context.getSource().sendFeedback(Text.literal("Set weather to thunder."));
                         }
                         return 0;
                     }))
             );
-    }
 
+        });
+    }
 }
