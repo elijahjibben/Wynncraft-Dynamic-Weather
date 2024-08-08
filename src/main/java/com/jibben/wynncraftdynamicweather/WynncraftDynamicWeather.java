@@ -13,7 +13,7 @@ public class WynncraftDynamicWeather implements ModInitializer {
     public static final Logger LOGGER = LoggerFactory.getLogger(ModID);
 
 	private static final double dailyTicks = 24000;
-	private static double dailyProbability = 0.2;
+	private static double dailyProbability = 0.99;
 	private static final double tickProbability = 1 - Math.pow(1 - dailyProbability, 1 / dailyTicks);
 
 	public static WeatherType weatherType = WeatherType.DISABLED;
