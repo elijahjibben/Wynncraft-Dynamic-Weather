@@ -10,5 +10,10 @@
   "text.autoconfig.wynncraft-dynamic-weather.category.Advanced": "Advanced Options",
   "text.autoconfig.wynncraft-dynamic-weather.option.advanced": "Advanced Options",
   "text.autoconfig.wynncraft-dynamic-weather.option.advanced.enableDebugCommand": "Enable Debug Command",
-  "text.autoconfig.wynncraft-dynamic-weather.option.advanced.enableDebugCommand.@Tooltip": "Enables the /wynnweather status command for debug purposes."
+  "text.autoconfig.wynncraft-dynamic-weather.option.advanced.enableDebugCommand.@Tooltip": "Enables the /wynnweather status command for debug purposes.",
+
+ "command.wynnweather.modDisabled": "Mod is disabled! Please enable in Mod Menu.",
+ "command.wynnweather.clear": "Set weather to clear.",
+ "command.wynnweather.rain": "Set weather to rain.",
+ "command.wynnweather.thunder": "Set weather to thunder."
 }

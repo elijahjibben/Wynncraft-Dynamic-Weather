@@ -14,10 +14,10 @@ public class WynnWeatherCommand {
                     .executes(context -> {
 
                         if (!WynncraftDynamicWeather.config.enableMod) {
-                            context.getSource().sendFeedback(Component.literal("Mod is disabled! Please enable in Mod Menu."));
+                            context.getSource().sendFeedback(Component.translatable("command.wynnweather.modDisabled"));
                         } else {
                             WynncraftDynamicWeather.setWeatherType(WeatherType.CLEAR);
-                            context.getSource().sendFeedback(Component.literal("Set weather to clear."));
+                            context.getSource().sendFeedback(Component.translatable("command.wynnweather.clear"));
                         }
                         return 0;
                     }))
@@ -26,10 +26,10 @@ public class WynnWeatherCommand {
             dispatcher.register(ClientCommandManager.literal("wynnweather").then(ClientCommandManager.literal("rain")
                     .executes(context -> {
                         if (!WynncraftDynamicWeather.config.enableMod) {
-                            context.getSource().sendFeedback(Component.literal("Mod is disabled! Please enable in Mod Menu."));
+                            context.getSource().sendFeedback(Component.translatable("command.wynnweather.modDisabled"));
                         } else {
                             WynncraftDynamicWeather.setWeatherType(WeatherType.RAIN);
-                            context.getSource().sendFeedback(Component.literal("Set weather to rain."));
+                            context.getSource().sendFeedback(Component.translatable("command.wynnweather.rain"));
                         }
                         return 0;
                     }))
@@ -38,10 +38,10 @@ public class WynnWeatherCommand {
             dispatcher.register(ClientCommandManager.literal("wynnweather").then(ClientCommandManager.literal("thunder")
                     .executes(context -> {
                         if (!WynncraftDynamicWeather.config.enableMod) {
-                            context.getSource().sendFeedback(Component.literal("Mod is disabled! Please enable in Mod Menu."));
+                            context.getSource().sendFeedback(Component.translatable("command.wynnweather.modDisabled"));
                         } else {
                             WynncraftDynamicWeather.setWeatherType(WeatherType.THUNDER);
-                            context.getSource().sendFeedback(Component.literal("Set weather to thunder."));
+                            context.getSource().sendFeedback(Component.translatable("command.wynnweather.thunder"));
                         }
                         return 0;
                     }))
