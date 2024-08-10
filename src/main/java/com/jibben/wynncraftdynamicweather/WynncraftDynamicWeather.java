@@ -38,7 +38,7 @@ public class WynncraftDynamicWeather implements ModInitializer {
 
 		ClientTickEvents.END_CLIENT_TICK.register(client -> {
 
-			if (client.player != null && client.level != null && config.enableMod && weatherType == WeatherType.CLEAR) {
+			if (client.player != null && client.level != null && config.enableMod) {
 				regionManager.assignDailyProbability();
 				if (Math.random() < tickProbability) {
 					changeWeather();
@@ -67,10 +67,10 @@ public class WynncraftDynamicWeather implements ModInitializer {
 		}
 		else weatherDuration = 12000 + new Random().nextInt(12001);
 
-		if (Math.random() < 0.5) {
+		if (Math.random() < 0.5 && weatherType == WeatherType.CLEAR) {
 			weatherType = WeatherType.RAIN;
 		}
-		else {
+		else if (weatherType == WeatherType.CLEAR) {
 			weatherType = WeatherType.THUNDER;
 		}
 	}
