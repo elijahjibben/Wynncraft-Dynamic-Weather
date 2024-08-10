@@ -10,11 +10,15 @@ import org.spongepowered.asm.mixin.injection.At;
 @Mixin(Biome.class)
 public class NesaakForceSnowMixin {
     // Nesaak Coordinate Rectangle
+    @Unique
     private static final int X1 = -475, Z1 = -575;
+    @Unique
     private static final int X2 = 310, Z2 = -940;
 
     //Lusuco and TOA Coordinate Rectangle
+    @Unique
     private static final int X3 = -475, Z3 = -575;
+    @Unique
     private static final int X4 = -85, Z4 = -295;
 
     @ModifyReturnValue(method = "getPrecipitationAt", at = @At("RETURN"))
