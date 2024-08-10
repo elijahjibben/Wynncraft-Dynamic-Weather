@@ -1,4 +1,4 @@
-package com.jibben.wynncraftdynamicweather;
+package com.jibben.wynncraftdynamicweather.modmenu;
 
 import com.terraformersmc.modmenu.api.ConfigScreenFactory;
 import com.terraformersmc.modmenu.api.ModMenuApi;

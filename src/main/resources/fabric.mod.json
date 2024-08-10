@@ -19,7 +19,7 @@
 			"com.jibben.wynncraftdynamicweather.WynncraftDynamicWeather"
 		],
 		"modmenu": [
-			"com.jibben.wynncraftdynamicweather.ModMenuIntegration"
+			"com.jibben.wynncraftdynamicweather.modmenu.ModMenuIntegration"
 		]
 	},
 	"mixins": [
