@@ -4,7 +4,6 @@ import com.jibben.wynncraftdynamicweather.command.WynnWeatherCommand;
 import com.jibben.wynncraftdynamicweather.config.WeatherType;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.client.event.lifecycle.v1.ClientTickEvents;
-import net.minecraft.client.MinecraftClient;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -23,7 +22,7 @@ public class WynncraftDynamicWeather implements ModInitializer {
 		WynnWeatherCommand.register();
 
 		ClientTickEvents.END_CLIENT_TICK.register(client -> {
-			if (client.player != null && client.world != null) {
+			if (client.player != null && client.level != null && weatherType == WeatherType.CLEAR) {
 				if (Math.random() < tickProbability) {
 					changeWeather();
 				}
@@ -34,6 +33,7 @@ public class WynncraftDynamicWeather implements ModInitializer {
 	private void changeWeather() {
 		if (Math.random() < 0.5) {
 			weatherType = WeatherType.RAIN;
+
 		}
 		else {
 			weatherType = WeatherType.THUNDER;
