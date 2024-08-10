@@ -82,14 +82,14 @@ public class WynncraftDynamicWeather implements ModInitializer {
 		// Lusuco and TOA
 		regionManager.addRegion(new MapRegion(-475, -575, -85, -295, 0.95));
 
-		// Almuj
-		regionManager.addRegion(new MapRegion(850, -2330, 1500, -1180, 0.50));
-
 		// Nemract
 		regionManager.addRegion(new MapRegion(-30,-2300,530,-1820,0.75));
 
 		// Pirate Town and Galleons Graveyard
 		regionManager.addRegion(new MapRegion(-800,-3000,-495,-3600,0.75));
+
+		// Almuj
+		regionManager.addRegion(new MapRegion(850, -2330, 1500, -1180, 0.50));
 
 		// Dernal Jungle
 		regionManager.addRegion(new MapRegion(-485,-925,-980,-249,0.33));
@@ -97,20 +97,20 @@ public class WynncraftDynamicWeather implements ModInitializer {
 		// Olux Swamp
 		regionManager.addRegion(new MapRegion(-2275,-5600,-1450,-5070,0.33));
 
+		//Silent Expanse
+		regionManager.addRegion(new MapRegion(400,-1150,1500,-250,0.25));
+
 		// Corkus and Legendary Island
 		regionManager.addRegion(new MapRegion(-2155,-3400,-1000,-2030,0));
 
-		//Silent Expanse
-		regionManager.addRegion(new MapRegion(400,-1150,1500,-250,0));
-
 		// Volcanic Isles
-		regionManager.addRegion(new MapRegion(-801,-3500,-1190,-3875,0));
+		regionManager.addRegion(new MapRegion(-801,-3500,-1190,-3875,0, true));
 
 		// Molten Heights
-		regionManager.addRegion(new MapRegion(950,-5000,1580,-5650,0));
+		regionManager.addRegion(new MapRegion(950,-5000,1580,-5650,0, true));
 
 		// Realm of Light
-		regionManager.addRegion(new MapRegion(-1150,-5775,-615,-6600,0));
+		regionManager.addRegion(new MapRegion(-1150,-5775,-615,-6600,0, true));
 	}
 
 	public static WeatherType getWeatherType() {
