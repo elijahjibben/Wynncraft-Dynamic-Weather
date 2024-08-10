@@ -2,7 +2,6 @@ package com.jibben.wynncraftdynamicweather.mixin;
 
 import com.jibben.wynncraftdynamicweather.WynncraftDynamicWeather;
 import com.llamalad7.mixinextras.injector.ModifyExpressionValue;
-import com.llamalad7.mixinextras.injector.ModifyReturnValue;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.LevelRenderer;
 import net.minecraft.core.BlockPos;
@@ -12,7 +11,7 @@ import org.spongepowered.asm.mixin.Unique;
 import org.spongepowered.asm.mixin.injection.At;
 
 @Mixin(LevelRenderer.class)
-public class preventVanillaSnowMixin {
+public class PreventVanillaSnowMixin {
 
     // Nesaak Coordinate Rectangle
     @Unique
