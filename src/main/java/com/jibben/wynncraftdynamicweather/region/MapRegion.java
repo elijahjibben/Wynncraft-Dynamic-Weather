@@ -25,6 +25,7 @@ public class MapRegion {
         this.neverRain = false;
     }
 
+
     public boolean isWithin(BlockPos pos) {
         return ((pos.getX() >= Math.min(x1, x2) && pos.getX() <= Math.max(x1, x2) &&
                 pos.getZ() >= Math.min(z1, z2) && pos.getZ() <= Math.max(z1, z2)));

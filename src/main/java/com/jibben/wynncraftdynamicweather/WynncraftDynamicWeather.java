@@ -77,7 +77,7 @@ public class WynncraftDynamicWeather implements ModInitializer {
 
 	private void setupRegions() {
 		// Nesaak
-		regionManager.addRegion(new MapRegion(-475, -575, -310, -940, 0.95));
+		regionManager.addRegion(new MapRegion(-475, -575, 310, -940, 0.95));
 
 		// Lusuco and TOA
 		regionManager.addRegion(new MapRegion(-475, -575, -85, -295, 0.95));
