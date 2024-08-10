@@ -25,7 +25,7 @@ public class NesaakForceSnowMixin {
 
     @ModifyReturnValue(method = "getPrecipitationAt", at = @At("RETURN"))
     private Biome.Precipitation getPrecipitation(Biome.Precipitation original, BlockPos pos) {
-        if (isPlayerInNesaak(pos) && WynncraftDynamicWeather.getWeatherType() != WeatherType.DISABLED)  {
+        if (isPlayerInNesaak(pos) && WynncraftDynamicWeather.config.enableMod)  {
             return Biome.Precipitation.SNOW;
         }
         return original;

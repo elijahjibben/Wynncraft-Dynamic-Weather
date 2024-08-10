@@ -13,8 +13,8 @@ public class WynnWeatherCommand {
             dispatcher.register(ClientCommandManager.literal("wynnweather").then(ClientCommandManager.literal("clear")
                     .executes(context -> {
 
-                        if (WynncraftDynamicWeather.getWeatherType() == WeatherType.DISABLED) {
-                            context.getSource().sendFeedback(Component.literal("Mod is disabled! Please enable in Mod Menu or via /wynnweather toggle."));
+                        if (!WynncraftDynamicWeather.config.enableMod) {
+                            context.getSource().sendFeedback(Component.literal("Mod is disabled! Please enable in Mod Menu."));
                         } else {
                             WynncraftDynamicWeather.setWeatherType(WeatherType.CLEAR);
                             context.getSource().sendFeedback(Component.literal("Set weather to clear."));
@@ -25,8 +25,8 @@ public class WynnWeatherCommand {
 
             dispatcher.register(ClientCommandManager.literal("wynnweather").then(ClientCommandManager.literal("rain")
                     .executes(context -> {
-                        if (WynncraftDynamicWeather.getWeatherType() == WeatherType.DISABLED) {
-                            context.getSource().sendFeedback(Component.literal("Mod is disabled! Please enable in Mod Menu or via /wynnweather toggle."));
+                        if (!WynncraftDynamicWeather.config.enableMod) {
+                            context.getSource().sendFeedback(Component.literal("Mod is disabled! Please enable in Mod Menu."));
                         } else {
                             WynncraftDynamicWeather.setWeatherType(WeatherType.RAIN);
                             context.getSource().sendFeedback(Component.literal("Set weather to rain."));
@@ -37,8 +37,8 @@ public class WynnWeatherCommand {
 
             dispatcher.register(ClientCommandManager.literal("wynnweather").then(ClientCommandManager.literal("thunder")
                     .executes(context -> {
-                        if (WynncraftDynamicWeather.getWeatherType() == WeatherType.DISABLED) {
-                            context.getSource().sendFeedback(Component.literal("Mod is disabled! Please enable in Mod Menu or via /wynnweather toggle."));
+                        if (!WynncraftDynamicWeather.config.enableMod) {
+                            context.getSource().sendFeedback(Component.literal("Mod is disabled! Please enable in Mod Menu."));
                         } else {
                             WynncraftDynamicWeather.setWeatherType(WeatherType.THUNDER);
                             context.getSource().sendFeedback(Component.literal("Set weather to thunder."));
@@ -47,25 +47,14 @@ public class WynnWeatherCommand {
                     }))
             );
 
-            dispatcher.register(ClientCommandManager.literal("wynnweather").then(ClientCommandManager.literal("status")
-                    .executes(context -> {
-                        context.getSource().sendFeedback(Component.literal("Daily Probability: " + (WynncraftDynamicWeather.getDailyProbability() * 100) + "%" + " Current Mode: " + WynncraftDynamicWeather.getWeatherType()));
-                        return 0;
-                    }))
-            );
-
-            dispatcher.register(ClientCommandManager.literal("wynnweather").then(ClientCommandManager.literal("toggle")
-                    .executes(context -> {
-                        if (WynncraftDynamicWeather.getWeatherType() == WeatherType.DISABLED) {
-                            WynncraftDynamicWeather.setWeatherType(WeatherType.CLEAR);
-                            context.getSource().sendFeedback(Component.literal("Weather features have been enabled!"));
-                        } else {
-                            WynncraftDynamicWeather.setWeatherType(WeatherType.DISABLED);
-                            context.getSource().sendFeedback(Component.literal("Weather features have been disabled!"));
-                        }
-                        return 0;
-                    }))
-            );
+            if (WynncraftDynamicWeather.config.advanced.enableDebugCommand) {
+                dispatcher.register(ClientCommandManager.literal("wynnweather").then(ClientCommandManager.literal("status")
+                        .executes(context -> {
+                            context.getSource().sendFeedback(Component.literal("Daily Probability: " + (WynncraftDynamicWeather.getDailyProbability() * 100) + "%" + " Current Mode: " + WynncraftDynamicWeather.getWeatherType()));
+                            return 0;
+                        }))
+                );
+            }
 
         });
     }

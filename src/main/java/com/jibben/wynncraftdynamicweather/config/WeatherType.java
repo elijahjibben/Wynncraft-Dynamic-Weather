@@ -4,5 +4,4 @@ public enum WeatherType {
     CLEAR,
     RAIN,
     THUNDER,
-    DISABLED
 }
