@@ -1,5 +1,7 @@
 package com.jibben.wynncraftdynamicweather.mixin;
 
+import com.jibben.wynncraftdynamicweather.WynncraftDynamicWeather;
+import com.jibben.wynncraftdynamicweather.config.WeatherType;
 import com.llamalad7.mixinextras.injector.ModifyReturnValue;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.level.biome.Biome;
@@ -23,7 +25,7 @@ public class NesaakForceSnowMixin {
 
     @ModifyReturnValue(method = "getPrecipitationAt", at = @At("RETURN"))
     private Biome.Precipitation getPrecipitation(Biome.Precipitation original, BlockPos pos) {
-        if (isPlayerInNesaak(pos))  {
+        if (isPlayerInNesaak(pos) && WynncraftDynamicWeather.getWeatherType() != WeatherType.DISABLED)  {
             return Biome.Precipitation.SNOW;
         }
         return original;
