@@ -18,11 +18,8 @@
 		"main": [
 			"com.jibben.wynncraftdynamicweather.WynncraftDynamicWeather"
 		],
-		"fabric-datagen": [
-			"com.jibben.wynncraftdynamicweather.WynncraftDynamicWeatherDataGenerator"
-		],
 		"modmenu": [
-			"com.jibben.wynncraftdynamicweather.modmenu.ModMenuIntegration"
+			"com.jibben.wynncraftdynamicweather.ModMenuIntegration"
 		]
 	},
 	"mixins": [

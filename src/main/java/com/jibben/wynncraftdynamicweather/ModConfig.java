@@ -1,4 +1,4 @@
-package com.jibben.wynncraftdynamicweather.modmenu;
+package com.jibben.wynncraftdynamicweather;
 
 import me.shedaniel.autoconfig.ConfigData;
 import me.shedaniel.autoconfig.annotation.Config;

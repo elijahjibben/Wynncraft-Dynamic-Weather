@@ -2,7 +2,6 @@ package com.jibben.wynncraftdynamicweather;
 
 import com.jibben.wynncraftdynamicweather.command.WynnWeatherCommand;
 import com.jibben.wynncraftdynamicweather.config.WeatherType;
-import com.jibben.wynncraftdynamicweather.modmenu.ModConfig;
 import me.shedaniel.autoconfig.AutoConfig;
 import me.shedaniel.autoconfig.serializer.GsonConfigSerializer;
 import net.fabricmc.api.ModInitializer;

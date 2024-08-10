@@ -4,11 +4,11 @@
   "text.autoconfig.wynncraft-dynamic-weather.option.enableMod": "Enable Mod",
   "text.autoconfig.wynncraft-dynamic-weather.option.renderVanillaSnow": "Render Vanilla Snow",
   "text.autoconfig.wynncraft-dynamic-weather.option.weatherDuration": "Weather Duration",
-  "text.autoconfig.wynncraft-dynamic-weather.option.enableMod.tooltip": "Should the mod function?",
-  "text.autoconfig.wynncraft-dynamic-weather.option.renderVanillaSnow.tooltip": "Disables the vanilla snow rendering. Enable this if you are not using the Particle Rain mod or want extra particles.",
-  "text.autoconfig.wynncraft-dynamic-weather.option.weatherDuration.tooltip": "Changes the duration random weather events last.",
+  "text.autoconfig.wynncraft-dynamic-weather.option.enableMod.@Tooltip": "Should the mod function?",
+  "text.autoconfig.wynncraft-dynamic-weather.option.renderVanillaSnow.@Tooltip": "Disables the vanilla snow rendering. Enable this if you are not using the Particle Rain mod or want extra particles.",
+  "text.autoconfig.wynncraft-dynamic-weather.option.weatherDuration.@Tooltip": "Changes the duration random weather events last.",
   "text.autoconfig.wynncraft-dynamic-weather.category.Advanced": "Advanced Options",
   "text.autoconfig.wynncraft-dynamic-weather.option.advanced": "Advanced Options",
   "text.autoconfig.wynncraft-dynamic-weather.option.advanced.enableDebugCommand": "Enable Debug Command",
-  "text.autoconfig.wynncraft-dynamic-weather.option.advanced.enableDebugCommand.tooltip": "Enables the /wynnweather status command for debug purposes."
+  "text.autoconfig.wynncraft-dynamic-weather.option.advanced.enableDebugCommand.@Tooltip": "Enables the /wynnweather status command for debug purposes."
 }
