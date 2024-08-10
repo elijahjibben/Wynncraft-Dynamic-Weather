@@ -4,7 +4,6 @@ import com.jibben.wynncraftdynamicweather.WynncraftDynamicWeather;
 import com.jibben.wynncraftdynamicweather.config.WeatherType;
 import net.minecraft.client.Minecraft;
 import net.minecraft.core.BlockPos;
-
 import java.util.ArrayList;
 import java.util.List;
 
