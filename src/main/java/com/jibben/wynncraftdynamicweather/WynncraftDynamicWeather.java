@@ -67,10 +67,10 @@ public class WynncraftDynamicWeather implements ModInitializer {
 		}
 		else weatherDuration = 12000 + new Random().nextInt(12001);
 
-		if (Math.random() < 0.5 && weatherType == WeatherType.CLEAR) {
+		if (Math.random() < 0.5) {
 			weatherType = WeatherType.RAIN;
 		}
-		else if (weatherType == WeatherType.CLEAR) {
+		else {
 			weatherType = WeatherType.THUNDER;
 		}
 	}
