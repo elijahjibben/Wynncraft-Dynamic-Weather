@@ -3,7 +3,7 @@ A fully client-side weather mod made specifically for Wynncraft.
 
 ## Features
 
-### **Random weather occurances!**
+### **Random weather occurrences!**
 Rain, thunder, snow, and sandstorms can all occur randomly throughout Wynn. Regions like Nemract and Galleon's Graveyard experience significantly more rain. The Nesaak and Lusuco tundra recieve regular snowfall and blizzards. The Almuj desert faces dust and sandstorms. Smog creeps into the Silent Expanse. Over a dozen regions have unique weather chances and hazards.
 ### Preview
 
