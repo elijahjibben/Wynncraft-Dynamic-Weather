@@ -3,7 +3,7 @@
 	"id": "wynncraft-dynamic-weather",
 	"version": "${version}",
 	"name": "Wynncraft Dynamic Weather",
-	"description": "A client-side Wynncraft mod that dynamically implements a dynamic weather engine.",
+	"description": "A client-side Wynncraft mod that implements a dynamic weather engine.",
 	"authors": [
 		"quikjay"
 	],
