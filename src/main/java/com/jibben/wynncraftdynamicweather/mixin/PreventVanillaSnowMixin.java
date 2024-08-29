@@ -23,12 +23,16 @@ public class PreventVanillaSnowMixin {
             at = @At(value = "INVOKE", target = "Lnet/minecraft/world/level/biome/Biome;getPrecipitationAt(Lnet/minecraft/core/BlockPos;)Lnet/minecraft/world/level/biome/Biome$Precipitation;")
     )
     private Biome.Precipitation snowRenderer(Biome.Precipitation precipitation) {
-        BlockPos pos = Minecraft.getInstance().player.blockPosition();
-        if (!WynncraftDynamicWeather.config.renderVanillaSnow) {
-            if (nesaak.isWithin(pos) || lusuco.isWithin(pos)) {
-                return Biome.Precipitation.NONE;
+
+        if (Minecraft.getInstance().player != null) {
+            BlockPos pos = Minecraft.getInstance().player.blockPosition();
+            if (!WynncraftDynamicWeather.config.renderVanillaSnow) {
+                if (nesaak.isWithin(pos) || lusuco.isWithin(pos)) {
+                    return Biome.Precipitation.NONE;
+                }
             }
         }
+
         return precipitation;
     }
 

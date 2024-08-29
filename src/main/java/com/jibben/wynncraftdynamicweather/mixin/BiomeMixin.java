@@ -32,11 +32,13 @@ public class BiomeMixin {
 
     @ModifyReturnValue(method = "getBaseTemperature", at = @At("RETURN"))
     private float getBaseTemperature(float original) {
-        BlockPos pos = Minecraft.getInstance().player.blockPosition();
-        if (almuj.isWithin(pos) && WynncraftDynamicWeather.config.enableMod)  {
-            return 1.0F;
+        if (Minecraft.getInstance().player != null) {
+            BlockPos pos = Minecraft.getInstance().player.blockPosition();
+            if (almuj.isWithin(pos) && WynncraftDynamicWeather.config.enableMod) {
+                return 1.0F;
+            }
         }
-        else return original;
+        return original;
     }
 
 }

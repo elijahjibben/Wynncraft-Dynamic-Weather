@@ -15,16 +15,20 @@ public class RegionManager {
     }
 
     public void assignDailyProbability() {
-        BlockPos pos = Minecraft.getInstance().player.blockPosition();
-        for (MapRegion region : regions) {
-            if (region.isWithin(pos)) {
-                WynncraftDynamicWeather.setDailyProbability(region.getDailyProbability());
-                if (region.isNeverRain()) {
-                    WynncraftDynamicWeather.setWeatherType(WeatherType.CLEAR);
+
+        if (Minecraft.getInstance().player != null) {
+            BlockPos pos = Minecraft.getInstance().player.blockPosition();
+            for (MapRegion region : regions) {
+                if (region.isWithin(pos)) {
+                    WynncraftDynamicWeather.setDailyProbability(region.getDailyProbability());
+                    if (region.isNeverRain()) {
+                        WynncraftDynamicWeather.setWeatherType(WeatherType.CLEAR);
+                    }
+                    break;
                 }
-                break;
+                else WynncraftDynamicWeather.setDailyProbability(0.20);
             }
-            else WynncraftDynamicWeather.setDailyProbability(0.20);
         }
+        else WynncraftDynamicWeather.setDailyProbability(0);
     }
 }
